@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Churn | Predict</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/style.css' ) }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet" />
+    <!-- End Fonts google -->
+
+    <!-- CSS Internal -->
+    <style>
+      .header {
+        background: linear-gradient(to bottom, #111, #000000aa), url('static/hero/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center left;
+        background-attachment: fixed;
+        min-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .about-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('static/hero/about3.jpg') no-repeat left;
+        background-size: 55%;
+        background-color: #111;
+        overflow: hidden;
+        padding: 100px 0;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .app-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('static/hero/app3.jpg') no-repeat right;
+        background-size: 55%;
+        background-color: #111;
+        overflow: hidden;
+        padding: 100px 0;
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      .contact {
+        background: linear-gradient(#000000dd, #000000dd), url('static/hero/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom left;
+        background-attachment: fixed;
+        min-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    </style>
+    <!-- end CSS Internal -->
+
+    <!-- Scroll -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- End Scroll -->
+
+    <!-- Emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('eblTQbB5rzReeFYlp');
+      })();
+    </script>
+    <!-- End Emailjs -->
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <input type="checkbox" name="bars" id="bars" style="position: absolute" />
+
+        <div class="nav-logo">
+          <a href="" class="logo-link"><img src="static/hero/images3.png" height="30px" />Orbit Future Academy</a>
+        </div>
+
+        <div class="nav-socials">
+          <label for="bars" class="btn-bars"><i class="fa fa-bars"></i></label>
+        </div>
+        <div class="navigation">
+          <label for="bars" class="btn-close"><i class="fa fa-close"></i></label>
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#about">information</a></li>
+            <li><a href="#aplication">application</a></li>
+            <li><a href="#team">team</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="items">
+          <div class="item">
+            <div class="card">
+              <h2>
+                <span>Hi,</span><br />
+                Let's Perform <strong> Predicting Churn in an Internet Service Provider </strong>
+              </h2>
+              <h1>
+                Optimalkan Retensi Pelanggan <br />
+                dengan Prediksi Churn yang Akurat, dan Aksi yang Tepat Waktu.
+              </h1>
+            </div>
+          </div>
+          <div class="item">
+            <div class="card-tags">
+              <h2>Our advantages</h2>
+              <div class="tags">
+                <span>Praktis</span>
+                <span>Cepat</span>
+                <span>Tepat</span>
+                <span>Real-Time</span>
+                <span>Konsisten</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-section">
+        <div class="inner-container">
+          <h1>Information</h1>
+          <p class="text">
+            Aplikasi web churn prediction ini adalah alat yang kuat untuk membantu divisi marketing meramalkan perilaku pelanggan. Aplikasi ini memberikan prediksi yang akurat tentang pelanggan yang berisiko untuk beralih, memungkinkan
+            Perusahaan untuk mengambil tindakan yang tepat waktu. Dan berkomitmen untuk memberikan solusi praktis dan real-time yang membantu perusahaan menjaga hubungan yang kuat dengan pelanggan.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- End About -->
+
+    <!-- Aplication -->
+    <section class="aplication" id="aplication">
+      <div class="app-section">
+        <div class="inner-container2">
+          <h1>Application</h1>
+          <form action="/predict" method="post" class="form">
+            <h3 class="sp">Sistem Prediksi Pelanggan Churn</h3>
+
+            <!-- Input 1 -->
+            <div class="item">
+              <p class="mb-0 p">Apakah pelanggan berlangganan TV Kabel?</p>
+              <br />
+              <input class="form-check-input" name="is_tv_subscriber" type="radio" value="1" id="ya" required />
+              <label class="form-check-label mr-5" for="ya">Ya</label>
+
+              <input class="form-check-input" name="is_tv_subscriber" type="radio" value="0" id="tidak" />
+              <label class="form-check-label" for="tidak">Tidak</label><br /><br />
+            </div>
+
+            <!-- Input 2 -->
+            <div class="item">
+              <p class="mb-0 p">Apakah pelanggan memiliki paket langganan film sinema?</p>
+              <br />
+              <input class="form-check-input" name="is_movie_package_subscriber" type="radio" value="1" id="yaa" required />
+              <label class="form-check-label mr-5" for="yaa">Ya</label>
+
+              <input class="form-check-input" name="is_movie_package_subscriber" type="radio" value="0" id="tidakk" />
+              <label class="form-check-label" for="tidakk">Tidak</label><br /><br />
+            </div>
+
+            <!-- Input 3 -->
+            <div class="item">
+              <label for="subscription_age" class="form-label">Berapa lama pelanggan telah menggunakan layanan internet? (tahun)</label><br /><br />
+              <input type="text" name="subscription_age" class="input2" id="subscription_age" required /><br /><br />
+            </div>
+
+            <!-- Input 4 -->
+            <div class="item">
+              <label for="bill_avg" class="form-label">Rata-rata tagihan 3 bulan terakhir ($)</label><br /><br />
+              <input type="number" name="bill_avg" class="input2" id="bill_avg" required /><br /><br />
+            </div>
+
+            <!-- Input 5 -->
+            <div class="item">
+              <label for="reamining_contract" class="form-label">Kontrak pelanggan tersisa (tahun)</label><br /><br />
+              <input type="text" name="reamining_contract" class="input2" id="reamining_contract" required /><br /><br />
+            </div>
+
+            <!-- Input 6 -->
+            <div class="item">
+              <label for="service_failure_count" class="form-label">Jumlah panggilan pelanggan ke pusat panggilan terkait kegagalan layanan dalam 3 bulan terakhir</label><br /><br />
+              <input type="number" name="service_failure_count" class="input2" id="service_failure_count" required /><br /><br />
+            </div>
+
+            <!-- Input 7 -->
+            <div class="item">
+              <label for="download_avg" class="form-label">Penggunaan internet/rata-rata unduhan 3 bulan terakhir (GB)</label><br /><br />
+              <input type="text" name="download_avg" class="input2" id="download_avg" required /><br /><br />
+            </div>
+
+            <!-- Input 8 -->
+            <div class="item">
+              <label for="upload_avg" class="form-label">Rata-rata unggahan 3 bulan terakhir (GB)</label><br /><br />
+              <input type="text" name="upload_avg" class="input2" id="upload_avg" required /><br /><br />
+            </div>
+
+            <!-- Input 9 -->
+            <div class="item">
+              <label for="download_over_limit" class="form-label">Jumlah batasan unduh yang terlampaui 9 bulan terakhir</label><br /><br />
+              <input type="number" name="download_over_limit" class="input2" id="download_over_limit" required /><br /><br />
+            </div>
+
+            <!-- Button Submit -->
+            <div class="d-flex justify-content-end mt-5">
+              <button type="submit" class="btn">Prediksi</button>
+            </div>
+            <!-- End of Button Submit -->
+          </form>
+
+          <form class="form">
+            <h3 class="hp">Hasil Prediksi</h3>
+            {% if hasil_prediksi %}
+            <p class="teks2">Pelanggan tersebut diprediksi <span class="fw-bold">{{nilai_kepercayaan}}% {{hasil_prediksi}}</span></p>
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- End Aplication -->
+
+    <!-- Team -->
+    <section class="team" id="team">
+      <div class="main">
+        <div class="title">Anggota Kelompok</div>
+
+        <div class="card_container">
+          <div class="card">
+            <div class="squareBox"></div>
+            <div class="round_box"></div>
+            <div class="img_box">
+              <img src="static/team-images/nitasari.jpg" alt="" />
+            </div>
+
+            <div class="user_content">
+              <h5 class="name">Yunita Sari</h5>
+              <p class="post">Ketua, Data, dan Modelling</p>
+
+              <p class="about">Mahasiswa semester 5 program studi Manajemen Universitas Tulungagung.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="squareBox"></div>
+            <div class="round_box"></div>
+            <div class="img_box">
+              <img src="static/team-images/Meyda-biru.jpg" alt="" />
+            </div>
+
+            <div class="user_content">
+              <h5 class="name">Meyda Wikaromah</h5>
+              <p class="post">Data dan Modelling</p>
+
+              <p class="about">Mahasiswa semester 5 program studi Pendidikan Komputer Universitas Lambung Mangkurat.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="squareBox"></div>
+            <div class="round_box"></div>
+            <div class="img_box">
+              <img src="static/team-images/dimas-biru.jpg" alt="" />
+            </div>
+
+            <div class="user_content">
+              <h5 class="name">Dimas Wahyu Eko S.</h5>
+              <p class="post">Deployment</p>
+
+              <p class="about">Mahasiswa semester 5 program studi Teknologi Informasi Universitas Sari Mulia.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="squareBox"></div>
+            <div class="round_box"></div>
+            <div class="img_box">
+              <img src="static/team-images/fira-removebg-preview.jpg" alt="" />
+            </div>
+
+            <div class="user_content">
+              <h5 class="name">Safira Aini Ilmi H.</h5>
+              <p class="post">Modelling</p>
+
+              <p class="about">Mahasiswa semester 5 program studi Biologi Universitas Negeri Surabaya.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="squareBox"></div>
+            <div class="round_box"></div>
+            <div class="img_box">
+              <img src="static/team-images/rivaldo-biru.jpg" alt="" />
+            </div>
+
+            <div class="user_content">
+              <h5 class="name">Rivaldo Ryandi Satria</h5>
+              <p class="post">Deployment</p>
+
+              <p class="about">Mahasiswa semester 7 program studi Pendidikan Bahasa Inggris Universitas Bhinneka PGRI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Team -->
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="items">
+          <div class="item">
+            <div class="card">
+              <h1>Contact us!</h1>
+              <p>Our team is ready to receive your feedback. Feel free to send us a message.</p>
+            </div>
+            <div class="row">
+              <div class="el-contact">
+                <div class="dir">
+                  <i class="fa fa-phone"></i>
+                  <span>call us</span>
+                </div>
+
+                <a href="#">
+                  <span>+1 6544 5433 43</span>
+                </a>
+              </div>
+              <div class="el-contact">
+                <div class="dir">
+                  <i class="fa fa-at"></i>
+                  <span>messaging us</span>
+                </div>
+
+                <a href="#">
+                  <span>team4bliss@gmail.com</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="socials">
+              <a href="#" class="s-link"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="s-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="s-link"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="item">
+            <form class="card">
+              <div class="line-field">
+                <label for="email">Complet form by write your mail</label>
+                <div class="row">
+                  <input type="email" id="email" placeholder="your email" />
+                  <button class="btn-next" onclick="sendMail()"><i class="fa fa-angle-right"></i></button>
+                </div>
+                <div class="">
+                  <label for="message"><small>Your message:</small></label>
+                  <textarea name="" id="message" cols="30" rows="10"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="rights">
+        <p>&copy; 2023 Team 4 Bliss. <a href="">All rights reserved</a></p>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="{{ url_for('static', filename='style/js/script.js' ) }}"></script>
+  </body>
+</html>
